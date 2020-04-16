@@ -6,15 +6,17 @@ import servlets.MyServlet;
 
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        MainServlet mainServlet = new MainServlet();
-        MyServlet myServlet = new MyServlet();
+    private static MainServlet mainServlet = new MainServlet();
+    private static MyServlet myServlet = new MyServlet();
+    private static ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+    private static Server server = new Server(8080);
 
-        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+    public static void main(String[] args) throws Exception {
+
         context.addServlet(new ServletHolder(mainServlet), "/");
         context.addServlet(new ServletHolder(myServlet), "/mult");
 
-        Server server = new Server(8080);
+
         server.setHandler(context);
 
         server.start();

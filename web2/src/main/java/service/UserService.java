@@ -35,15 +35,15 @@ public class UserService {
     }
 
     public void adminDefault() {
-        User user = new User("admin", "admin");
+        User user1 = new User("admin", "admin");
         Long id = maxId.incrementAndGet();
         dataBase.put(id, new User(id, "admin", "admin"));
 
-        user = new User("mark", "mark");
+        User user2 = new User("mark", "mark");
         Long id2 = maxId.incrementAndGet();
         dataBase.put(id2, new User(id2, "mark", "mark"));
 
-        user = new User("fds", "fds");
+        User user3 = new User("fds", "fds");
         Long id3 = maxId.incrementAndGet();
         dataBase.put(id3, new User(id3, "fds", "fds"));
     }

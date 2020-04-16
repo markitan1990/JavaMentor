@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31066d14-a391-4987-a198-f3050d3904ab" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/MyServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../L1.1 Simple web server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../L1.1 Simple web server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/MainServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/PageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/PageGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +131,7 @@
       <workItem from="1561627636221" duration="3990000" />
       <workItem from="1563295848057" duration="23000" />
       <workItem from="1586868614230" duration="130000" />
+      <workItem from="1587034488652" duration="188000" />
     </task>
     <servers />
   </component>
@@ -153,26 +155,26 @@
       <screen x="0" y="0" width="1739" height="939" />
     </state>
     <state x="325" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1739.939@0.0.1739.939" timestamp="1586867514195" />
-    <state x="650" y="225" key="FileChooserDialogImpl" timestamp="1586868743376">
+    <state x="650" y="225" key="FileChooserDialogImpl" timestamp="1587034674105">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state x="650" y="225" key="FileChooserDialogImpl/0.0.1739.939@0.0.1739.939" timestamp="1586868743376" />
-    <state width="1696" height="248" key="GridCell.Tab.0.bottom" timestamp="1586868466298">
+    <state x="650" y="225" key="FileChooserDialogImpl/0.0.1739.939@0.0.1739.939" timestamp="1587034674105" />
+    <state width="1696" height="240" key="GridCell.Tab.0.bottom" timestamp="1587034675949">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1696" height="248" key="GridCell.Tab.0.bottom/0.0.1739.939@0.0.1739.939" timestamp="1586868466298" />
-    <state width="1696" height="248" key="GridCell.Tab.0.center" timestamp="1586868466298">
+    <state width="1696" height="240" key="GridCell.Tab.0.bottom/0.0.1739.939@0.0.1739.939" timestamp="1587034675949" />
+    <state width="1696" height="240" key="GridCell.Tab.0.center" timestamp="1587034675949">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1696" height="248" key="GridCell.Tab.0.center/0.0.1739.939@0.0.1739.939" timestamp="1586868466298" />
-    <state width="1696" height="248" key="GridCell.Tab.0.left" timestamp="1586868466298">
+    <state width="1696" height="240" key="GridCell.Tab.0.center/0.0.1739.939@0.0.1739.939" timestamp="1587034675949" />
+    <state width="1696" height="240" key="GridCell.Tab.0.left" timestamp="1587034675949">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1696" height="248" key="GridCell.Tab.0.left/0.0.1739.939@0.0.1739.939" timestamp="1586868466298" />
-    <state width="1696" height="248" key="GridCell.Tab.0.right" timestamp="1586868466298">
+    <state width="1696" height="240" key="GridCell.Tab.0.left/0.0.1739.939@0.0.1739.939" timestamp="1587034675949" />
+    <state width="1696" height="240" key="GridCell.Tab.0.right" timestamp="1587034675949">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state width="1696" height="248" key="GridCell.Tab.0.right/0.0.1739.939@0.0.1739.939" timestamp="1586868466298" />
+    <state width="1696" height="240" key="GridCell.Tab.0.right/0.0.1739.939@0.0.1739.939" timestamp="1587034675949" />
     <state x="673" y="247" key="chooseDestDirectoryDialog" timestamp="1586867780419">
       <screen x="0" y="0" width="1739" height="939" />
     </state>

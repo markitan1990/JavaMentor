@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa7a39cc-49be-465c-b61a-b54af8a170df" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../web1/src/main/java/servlets/MyServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../L1.1 Simple web server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../L1.1 Simple web server/pom.xml" afterDir="false" />
+    <list default="true" id="fa7a39cc-49be-465c-b61a-b54af8a170df" name="Default" comment="Update web3">
+      <change beforePath="$PROJECT_DIR$/../web1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../web1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web1/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web1/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web1/src/main/java/util/PageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web1/src/main/java/util/PageGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web1/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web1/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/src/main/java/servlet/ApiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/src/main/java/servlet/ApiServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/src/main/java/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/src/main/java/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/src/main/java/servlet/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/src/main/java/servlet/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/target/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/target/classes/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/target/classes/servlet/ApiServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/target/classes/servlet/ApiServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/target/classes/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/target/classes/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web2/target/classes/servlet/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web2/target/classes/servlet/RegistrationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +55,12 @@
     <property name="android.sdk.path" value="C:/android-sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-servlet/9.3.0.M0/jetty-servlet-9.3.0.M0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -166,11 +180,16 @@
       <workItem from="1586960103824" duration="6928000" />
       <workItem from="1586984604733" duration="4343000" />
       <workItem from="1587020510435" duration="7324000" />
+      <workItem from="1587035870508" duration="501000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update web3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update web3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="94" key="#Project_Structure" timestamp="1586788167199">
@@ -235,10 +254,10 @@
       <screen x="0" y="0" width="1739" height="939" />
     </state>
     <state width="1696" height="297" key="GridCell.Tab.1.right/0.0.1739.939@0.0.1739.939" timestamp="1587033336134" />
-    <state x="701" y="88" key="SettingsEditor" timestamp="1586877304799">
+    <state x="701" y="88" key="SettingsEditor" timestamp="1587035981442">
       <screen x="0" y="0" width="1739" height="939" />
     </state>
-    <state x="701" y="88" key="SettingsEditor/0.0.1739.939@0.0.1739.939" timestamp="1586877304799" />
+    <state x="701" y="88" key="SettingsEditor/0.0.1739.939@0.0.1739.939" timestamp="1587035981442" />
     <state x="781" y="276" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586791139041" />
     <state x="298" y="69" key="new project wizard" timestamp="1586875722993">
       <screen x="0" y="0" width="1739" height="939" />

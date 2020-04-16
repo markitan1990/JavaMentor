@@ -15,7 +15,6 @@ public class PageGenerator {
 
     private final Configuration cfg;
 
-
     public String getPage(String filename, Map<String, Object> data) {
         Writer stream = new StringWriter();
         try {
@@ -26,7 +25,6 @@ public class PageGenerator {
         }
         return stream.toString();
     }
-
     public PageGenerator() {
         cfg = new Configuration();
     }
