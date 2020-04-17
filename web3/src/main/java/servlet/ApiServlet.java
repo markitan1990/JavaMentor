@@ -2,7 +2,6 @@ package servlet;
 
 import com.google.gson.Gson;
 import exception.DBException;
-import model.BankClient;
 import service.BankClientService;
 
 import javax.servlet.ServletException;
@@ -12,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class ApiServlet extends HttpServlet {
+    private BankClientService bankClientService = new BankClientService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BankClientService bankClientService = new BankClientService();
         Gson gson = new Gson();
         String json;
         if (req.getPathInfo().contains("all")) {
@@ -34,7 +33,6 @@ public class ApiServlet extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BankClientService bankClientService = new BankClientService();
         try {
             bankClientService.createTable();
             resp.setStatus(200);
@@ -45,8 +43,7 @@ public class ApiServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BankClientService bankClientService = new BankClientService();
-        if (req.getPathInfo().contains("all")){
+        if (req.getPathInfo().contains("all")) {
             try {
                 bankClientService.cleanUp();
             } catch (DBException e) {

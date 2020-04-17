@@ -63,13 +63,12 @@ public class BankClient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BankClient that = (BankClient) o;
-        return Objects.equals(getName(), that.getName()) &&
-                Objects.equals(getMoney(), that.getMoney());
+        return Objects.equals(name, that.name) &&
+                Objects.equals(password, that.password);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(getName(), getMoney());
+        return Objects.hash(name, password);
     }
 }

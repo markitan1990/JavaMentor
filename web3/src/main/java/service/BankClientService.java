@@ -4,11 +4,16 @@ import dao.BankClientDAO;
 import exception.DBException;
 import model.BankClient;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BankClientService {
+    private BankClientDAO dao = getBankClientDAO();
+
     public BankClientService() {
     }
 
@@ -21,44 +26,59 @@ public class BankClientService {
     }
 
     public BankClient getClientByName(String name) {
-        return null;
+        BankClient bankClient = null;
+        try {
+            bankClient = dao.getClientByName(name);
+        } catch (SQLException ex) {
+            System.out.println("Не возможно найти такого клиента");
+        }
+        return bankClient;
     }
 
     public List<BankClient> getAllClient() {
-        BankClientDAO dao = getBankClientDAO();
         List<BankClient> list = new ArrayList<>();
         try {
-           list = dao.getAllBankClient();
+            list = dao.getAllBankClient();
         } catch (SQLException e) {
             System.out.println("Невозможно получить пользователей из базы");
         }
-
-        return null;
+        return list;
     }
 
     public boolean deleteClient(String name) {
+        try {
+            dao.deleteClient(name);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("User is not deleted");
+        }
         return false;
     }
 
     public boolean addClient(BankClient client) throws DBException {
-        BankClientDAO dao = getBankClientDAO();
+        boolean res = false;
         try {
             dao.addClient(client);
+            res = true;
         } catch (SQLException e) {
-            throw new DBException(e);
-        }catch (NumberFormatException ex){
-            throw new NumberFormatException();
+//            throw new DBException(e);
+        } catch (NumberFormatException ex) {
+//            throw new NumberFormatException();
         }
-        return true;
+        return res;
     }
 
     public boolean sendMoneyToClient(BankClient sender, String name, Long value) {
-
+        try {
+            dao.updateClientsMoney(sender.getName(), sender.getPassword(), value, name);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Перевод не осуществлен");
+        }
         return false;
     }
 
     public void cleanUp() throws DBException {
-        BankClientDAO dao = getBankClientDAO();
         try {
             dao.dropTable();
         } catch (SQLException e) {
@@ -67,7 +87,6 @@ public class BankClientService {
     }
 
     public void createTable() throws DBException {
-        BankClientDAO dao = getBankClientDAO();
         try {
             dao.createTable();
         } catch (SQLException e) {
@@ -78,7 +97,6 @@ public class BankClientService {
     private static Connection getMysqlConnection() {
         try {
             DriverManager.registerDriver((Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance());
-
             StringBuilder url = new StringBuilder();
 
             url.
