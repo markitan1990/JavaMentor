@@ -38,7 +38,7 @@ public class DBHelper {
         configuration.setProperty("hibernate.connection.username", "root");
         configuration.setProperty("hibernate.connection.password", "root");
         configuration.setProperty("hibernate.show_sql", "true");
-        configuration.setProperty("hibernate.hbm2ddl.auto", "create");
+        configuration.setProperty("hibernate.hbm2ddl.auto", "update");
         return configuration;
     }
 
@@ -47,8 +47,7 @@ public class DBHelper {
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(configuration.getProperties());
         ServiceRegistry serviceRegistry = builder.build();
-         SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-
+        SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         return sessionFactory;
     }
 

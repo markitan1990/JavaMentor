@@ -26,6 +26,5 @@ public class ProducerServlet extends HttpServlet {
             log("Что то не так");
             resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
         }
-
     }
 }

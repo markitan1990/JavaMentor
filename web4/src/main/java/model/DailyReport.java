@@ -1,6 +1,7 @@
 package model;
 
 import org.hibernate.Session;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -15,8 +16,8 @@ public class DailyReport {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Temporal(TemporalType.TIMESTAMP)
-//    @Column(name = "date")
+    @Column(name = "date")
+//    @Type(type = "org.hibernate.type.LocalDateType")
     private LocalDate date;
 
     @Column(name = "earnings")
@@ -29,9 +30,16 @@ public class DailyReport {
 
     }
 
+    public DailyReport(Long id, LocalDate date, Long earnings, Long soldCars) {
+        this.earnings = earnings;
+        this.soldCars = soldCars;
+        this.date = date;
+        this.id = id;
+    }
     public DailyReport(LocalDate date, Long earnings, Long soldCars) {
         this.earnings = earnings;
         this.soldCars = soldCars;
+        this.date = date;
     }
 
     public LocalDate getDate() {

@@ -4,13 +4,10 @@ import model.Car;
 import model.DailyReport;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import service.DailyReportService;
-import util.DBHelper;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,15 +20,18 @@ public class CarDao {
     }
 
     public void addCar(Car car) {
-        session.beginTransaction();
-        if (!isCarExist(car) && isCarsLessTen(car)) {
-            session.save(car);
-        } else {
-            System.out.println("Bad query");
-            throw new HibernateException("Bad query");
+        Transaction transaction = session.beginTransaction();
+        try {
+            if (!isCarExist(car) && isCarsLessTen(car)) {
+                session.save(car);
+                transaction.commit();
+            } else {
+                System.out.println("Bad query");
+                throw new HibernateException("Bad query");
+            }
+        } catch (Exception e) {
+            transaction.rollback();
         }
-        session.getTransaction().commit();
-        session.close();
     }
 
     private boolean isCarExist(Car car) {
@@ -62,28 +62,30 @@ public class CarDao {
     }
 
     public List<Car> getAllCars() {
-        return session.createQuery("From Car").list();
-    }
-
-    public void addListCars(List<Car> cars) {
-        Session session = DBHelper.getSessionFactory().openSession();
-        Transaction t = session.beginTransaction();
-        for (Car a : cars) {
-            session.save(a);
+        Transaction transaction = session.getTransaction();
+        List<Car> list = null;
+        try {
+            list = session.createQuery("From Car").list();
+            transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
         }
-        t.commit();
-        session.close();
+        return list;
     }
 
     public void bayCar(String brand, String model, String licensePlate) {
-
-        Transaction t = session.beginTransaction();
-        long id = getIdFromCar(brand, model, licensePlate);
-        Car bayCar = (Car) session.load(Car.class, id);
-        setReport(bayCar);
-        bayCar.setId(id);
-        session.delete(bayCar);
-        t.commit();
+        DailyReportService dailyReportService = DailyReportService.getInstance();
+        Transaction transaction = session.beginTransaction();
+        Car bayCar = null;
+        try {
+            long id = getIdFromCar(brand, model, licensePlate);
+            bayCar = (Car) session.load(Car.class, id);
+            dailyReportService.getList().add(bayCar);
+            session.delete(bayCar);
+            transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+        }
     }
 
     public Long getIdFromCar(String brand, String model, String licensePlate) {
@@ -94,13 +96,4 @@ public class CarDao {
         List<Car> list = find.list();
         return list.get(0).getId();
     }
-
-    public void setReport(Car car) {
-        DailyReportService dailyReportService = DailyReportService.getInstance();
-        LocalDate localDate = dailyReportService.getLocalDate();
-
-        DailyReport dailyReport = new DailyReport(localDate, car.getPrice(), 1L);
-        session.save(dailyReport);
-    }
-
 }
